@@ -18,7 +18,8 @@
 
             $categories = $this->get_cohorts();
             $mform->addElement('select', 'cohorts', get_string('form:cohorts', 'report_coursecompletion'), $categories);
-            $mform->setDefault('coursecats', 0);
+            $mform->setDefault('cohorts', 0);
+            $mform->disabledIf('cohorts', 'operator', 'EQ', '0');
 
             $mform->addElement('header', 'coursesection', get_string('coursedetails', 'report_coursecompletion'));
             $mform->setExpanded('coursesection', false);
@@ -35,27 +36,37 @@
             $mform->addElement('advcheckbox',  'suspended', get_string('form:suspendedstudents', 'report_coursecompletion'), '');
             $mform->addElement('advcheckbox',  'deleted', get_string('form:deletedstudents', 'report_coursecompletion'), '');
             $mform->setDefault('good', 1);
+            $mform->disabledIf('good', 'operator', 'EQ', '0');
+            $mform->disabledIf('suspended', 'operator', 'EQ', '0');
+            $mform->disabledIf('deleted', 'operator', 'EQ', '0');
 
             $mform->addElement('header', 'timecompletedsection', get_string('timecompletedsection', 'report_coursecompletion'));
             $mform->setExpanded('timecompletedsection', false);
             $mform->addElement('advcheckbox',  'filterbytimecompleted', get_string('filterbytimecompleted',  'report_coursecompletion'), '');
             $mform->addElement('date_selector', 'timecompletedafter', get_string('form:timecompletedafter', 'report_coursecompletion'));
             $mform->addElement('date_selector', 'timecompletedbefore', get_string('form:timecompletedbefore', 'report_coursecompletion'));
+            $mform->disabledIf('timecompletedafter', 'filterbytimecompleted');
+            $mform->disabledIf('timecompletedbefore', 'filterbytimecompleted');
 
             $mform->addElement('header', 'timestartedsection', get_string('timestartedsection', 'report_coursecompletion'));
             $mform->setExpanded('timestartedsection', false);
             $mform->addElement('advcheckbox',  'filterbytimestarted', get_string('filterbytimestarted',  'report_coursecompletion'), '');
             $mform->addElement('date_selector', 'timestartedafter', get_string('form:timestartedafter', 'report_coursecompletion'));
             $mform->addElement('date_selector', 'timestartedbefore', get_string('form:timestartedbefore', 'report_coursecompletion'));
+            $mform->disabledIf('timestartedafter', 'filterbytimestarted');
+            $mform->disabledIf('timestartedbefore', 'filterbytimestarted');
 
-            $mform->closeHeaderBefore('operator');
+            //s$mform->closeHeaderBefore('operator');
 
+            $mform->addElement('header', 'sortsection', get_string('sortsection', 'report_coursecompletion'));
             $radioarray=array();
             $radioarray[] = $mform->createElement('radio', 'operator', '', get_string('and', 'report_coursecompletion'), 0);
             $radioarray[] = $mform->createElement('static', 'space', '', '<br>');
             $radioarray[] = $mform->createElement('radio', 'operator', '', get_string('or', 'report_coursecompletion'), 1);
             $mform->addGroup($radioarray, 'radioar', get_string('form:andor', 'report_coursecompletion'), array(' '), false);
             $mform->setDefault('operator', 0);
+            $mform->addHelpButton('radioar', 'help:sortoptions', 'report_coursecompletion');
+
 
             $mform->setType('firstname',PARAM_ALPHA);
             $mform->setType('lastname',PARAM_ALPHA);

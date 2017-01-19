@@ -14,9 +14,9 @@
     $string['table_header_lastname'] = "Last Name";
     $string['table_header_email'] = "Email";
 
-    $string['form:goodstudents'] = "Active Students";
-    $string['form:suspendedstudents'] = "Suspended Students";
-    $string['form:deletedstudents'] = "Deleted Students";
+    $string['form:goodstudents'] = "Active Students:";
+    $string['form:suspendedstudents'] = "Suspended Students:";
+    $string['form:deletedstudents'] = "Deleted Students:";
 
     $string['form:firstname'] = "First Name:";
     $string['form:lastname'] = "Last Name:";
@@ -35,16 +35,22 @@
     $string['any_cat'] = "Any Catagories";
     $string['any_cohort'] = "Any Cohort";
 
-    $string['coursecats'] = "Course Cats :3";
+    $string['coursecats'] = "Course Cats:3";
     $string['userdetails'] = "User Details";
     $string['coursedetails'] = "Course Details";
     $string['timecompletedsection'] = "Time Completed Filters";
     $string['timestartedsection'] = "Time Started Filters";
-    $string['filterbytimecompleted'] = "Filter By Time Completed";
-    $string['filterbytimestarted'] = "Filter By Time Started";
+    $string['filterbytimecompleted'] = "Filter By Time Completed:";
+    $string['filterbytimestarted'] = "Filter By Time Started:";
     $string['showspecialuserssection'] = "Show User Options";
+    $string['sortsection'] = "Sort Options";
 
+    $string['sortcompleted'] = "Completion Status:";
 
+    $string['help:sortoptions'] = "Help on \"Sort Options\"";
+    $string['help:sortoptions_help'] = "This changes the link between all of the sql sections from AND to OR. This lets you choose whether each person need to conform to all or just one of the sort options. Warning: changing this to \"Match any field\" will disable some sorting options.";
+
+    $string['exportbutton'] = "Export as .csv";
 
     $string['countstring'] = 'Showing: {$a->filter} of {$a->total}';
 

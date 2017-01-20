@@ -77,9 +77,9 @@
         if ($data->filterbytimecompleted) {
             if ($data->timecompletedafter) {
                 if (count($params)>0) {
-                    $where .= $operator. "(";
+                    $where .= $operator;
                 }
-                $where .= ' timecompleted >= :timecompletedafter ';
+                $where .= ' (timecompleted >= :timecompletedafter ';
                 $params['timecompletedafter'] = $data->timecompletedafter;
             }
             if ($data->timecompletedbefore) {
@@ -92,9 +92,9 @@
         if ($data->filterbytimestarted) {
             if ($data->timestartedafter) {
                 if (count($params)>0) {
-                    $where .= $operator. "(";
+                    $where .= $operator;
                 }
-                $where .= ' timestarted >= :timestartedafter ';
+                $where .= ' (timestarted >= :timestartedafter ';
                 $params['timestartedafter'] = $data->timestartedafter;
             }
             if ($data->timestartedbefore) {
@@ -129,13 +129,14 @@
             }
         }
         if ($operator == " AND ") {
+            if (count($params)>0) {
+                    $where .= $operator;
+            }
             if ($data->good + $data->suspended + $data->deleted >= 2) {
                 $where .= '(';
             }
             if ($data->good) {
-                if (count($params)>0) {
-                    $where .= $operator;
-                }
+
                 if ($data->good == 1) {
                     $where .= ' ( u.deleted = 0 AND u.suspended = 0 ) ';
                     $params[] = "Whatever";
@@ -144,8 +145,6 @@
             if ($data->suspended) {
                 if (in_array("Whatever", $params)) {
                     $where .= " OR ";
-                }else if (count($params)>0) {
-                    $where .= $operator;
                 }
                 $params[] = "Whatever";
                 if ($data->suspended == 1) {
@@ -157,8 +156,6 @@
             if ($data->deleted) {
                 if (in_array("Whatever", $params)) {
                     $where .= " OR ";
-                }else if (count($params)>0) {
-                    $where .= $operator;
                 }
                 $params[] = "Whatever";
                 if ($data->deleted == 1) {
@@ -200,7 +197,7 @@
 
     $sql ="SELECT cc.id, cc.userid, c.fullname, cc.timestarted, cc.course, cc.timecompleted, u.firstname, u.lastname, u.email FROM {course_completions} AS cc JOIN {user} AS u ON cc.userid = u.id JOIN {course} AS c ON cc.course = c.id ".$sqlcohorts.$where.$orderby;
     $sql2 = "SELECT COUNT(cc.id) FROM {course_completions} AS cc JOIN {user} AS u ON cc.userid = u.id JOIN {course} AS c ON cc.course = c.id ".$sqlcohorts.$where.$orderby;
-    //echo $sql."<br>";
+    // $sql."<br>";
     //var_dump($params);
     $currentstart = $page * $perpage; //Count of where to start getting records
 

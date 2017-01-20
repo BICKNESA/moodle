@@ -1,7 +1,7 @@
 <?php
     $string["pluginname"] = "Course completion";
     $string["coursecompletion"] = "Course completion";
-    $string["report_header"] = "A heading :D";
+    $string["report_header"] = "Report Course Completions";
 
     $string['table_header_id'] = "Id";
     $string['table_header_userid'] = "User Id";

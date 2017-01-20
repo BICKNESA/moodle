@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Movie Night Vote</title>
+  <link type="text/css" href="css/style.css" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="user-info">
+                <a href="login.html">Log in</a>
+                <a href="admin.html">Site admin</a>
+            </div>
+            <h1>Movie Night Vote</h1>
+            <div id="nav">
+                <ul>
+                    <li><a href="index.html">This week's vote</a></li>
+                    <li><a href="results.html">This week's results</a></li>
+                    <li><a href="previous.html">Previous results</a></li>
+                    <li><a href="about.html">About this site</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div> <!-- end of nav -->
+        </div> <!-- end of header -->
+        <div id="content">
+            <h2>This week's vote:</h2>
+            <form method="POST" action="results.html">
+                <p>
+                    Hi
+                    <select name="name">
+                        <option value="1">Alice</option>
+                        <option value="2">Bob</option>
+                        <option value="3" selected>Claire</option>
+                    </select>
+                    !
+                </p>
+                <p>Which of the following movies would you like to see on the next Movie Night?<br>Pick which one you'd like below!</p>
+                <hr>
+                    <div id="movies">
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Deadpool" src="img/deadpool.jpg">
+                                <div class="words">
+                                    <span class="title">Deadpool</span>
+                                    <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                                </div>
+                                <span class="title">Deadpool</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                                <input type="radio" id="vote_1" value="1" name="vote">
+                            </label>
+
+                        </p>
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Fantastic Beasts and Where to Find Them" src="img/fantastic-beasts.jpg">
+                                <span class="title">Fantastic Beasts and Where to Find Them</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                                <input type="radio" id="vote_2" value="2" name="vote">
+                            </label>
+                        </p>
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Finding Dory" src="img/finding-dory.jpg">
+                                <span class="title">Finding Dory</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</span>
+                                <input type="radio" id="vote_3" value="3" name="vote">
+                            </label>
+                        </p>
+                        <p class="movie">
+                                <img class="poster" alt="La La Land" src="img/la-la-land.jpg">
+                                <span class="title">La La Land</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</span>
+                                <input type="radio" id="vote_4" value="4" name="vote">
+                            </label>
+                        </p>
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Moana" src="img/moana.jpg">
+                                <span class="title">Moana</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                                <input type="radio" id="vote_5" value="5" name="vote">
+                            </label>
+                        </p>
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Pete’s Dragon" src="img/petes-dragon.jpg">
+                                <span class="title">Pete’s Dragon</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</span>
+                                <input type="radio" id="vote_6" value="6" name="vote">
+                            </label>
+                        </p>
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Rogue One: A Star Wars Story" src="img/rogue-one.jpg">
+                                <span class="title">Rogue One: A Star Wars Story</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span>
+                                <input type="radio" id="vote_7" value="7" name="vote">
+                            <label>
+                        </p>
+                        <p class="movie">
+                            <label>
+                                <img class="poster" alt="Suicide Squad" src="img/suicide-squad.jpg">
+                                <span class="title">Suicide Squad</span>
+                                <span class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+                                <input type="radio" id="vote_8" value="8" name="vote">
+                            <label>
+                        </p>
+                    </div> <!-- end of movies -->
+                <input type="submit" value="Vote!" id="vote_button">
+            </form>
+        </div>
+    </div> <!-- end of wrapper -->
+    <div id="footer">
+        <p class="small">A page by [your name]</p>
+    </div> <!-- end of footer -->
+    <script
+        src="http://code.jquery.com/jquery-3.1.1.js"
+		integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+		crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

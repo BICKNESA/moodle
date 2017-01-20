@@ -1,0 +1,115 @@
+body { /* all of the html is nested inside the body tag so rules applied here affect the whole page */
+    margin: 0;
+    font-family: Arial;
+    background-color: #29323C;
+    background: linear-gradient(#49525C , #19222C); /* Standard syntax */
+}
+
+#wrapper{
+    width: 960px;
+    margin: 0 auto;
+    //background-color: purple;
+}
+
+#user-info{
+    float: right;
+}
+
+#user-info a{
+    padding-left: 20px
+}
+
+#movies{
+    padding: 10px;
+    background-color: #181E24;
+    margin-top: 0;
+    padding-top 8px;
+    height: 1600px;
+    /*border-style: none;
+    border-top-style: solid;
+    border-color: #FFCC00;*/
+}
+
+.movie{
+    width: 270px;
+    float: left;
+    height: 500px;
+    background-color: #383E44;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.poster{
+    width: 150px;
+    border-width: 4px;
+    border-color: white;
+    margin: 0 60px;
+}
+
+a{
+    font-size: 14px;
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
+a:visited{
+    color: #999999;
+}
+
+a:hover{
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+h1, h2{
+    color: #FFFFFF;
+}
+
+h1 {
+    font-family: Arial Black, Gadget, sans-serif;
+    margin-bottom:0px;
+}
+
+h2{
+    font-size: 26px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+
+hr{
+    height: 3px;
+    color: #FFCC00;
+    background-color: #FFCC00;
+    padding-bottom: 0;
+    border: none;
+    margin-bottom: 0;
+}
+
+.movie span{
+    display: block;
+    margin: 15px;
+}
+
+.movie input{
+    display: none;
+}
+
+#vote_button { /* an example of styling an element by its id */
+    cursor: pointer;
+}
+
+.small { /* an example of styling an element (or multiple elements, remember classes can go on more than one element) by its class */
+    font-size: 80%;
+}
+
+.title{
+    font-size: 18px;
+    text-align: center;
+    height: 46px;
+    text-decoration: underline;
+}
+
+p{
+  font-size: 16px;
+}

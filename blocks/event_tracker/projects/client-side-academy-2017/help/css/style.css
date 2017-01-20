@@ -1,0 +1,162 @@
+body { /* all of the html is nested inside the body tag so rules applied here affect the whole page */
+    font-family: Arial;
+    font-size: 16px;
+    background: #29323c; /* fallback for old browsers */
+    background: linear-gradient(135deg, #485563 , #29323c);
+    margin: 0;
+}
+
+h1, h2 {
+    color: #ffffff;
+}
+
+h1 {
+    margin-bottom: 0;
+    font-family: "Arial Black", Gadget, sans-serif;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px #29323c;
+    margin-bottom: 0.5em;
+    margin-top: 1.5em;
+}
+
+p {
+    color: #fff;
+}
+
+#wrapper {
+    width:960px;
+    margin: 0 auto 70px;
+}
+
+#movies {
+    background-color: #181E24;
+    border-top: 4px solid #FFCC00;
+    padding: 10px 20px;
+}
+
+#vote_button { /* an example of styling an element by its id */
+    border-radius: 0;
+    border: none;
+    clear: both;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2em;
+    padding: 5px 15px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+#vote_button:hover {
+    background-color: #FFCC00;
+}
+
+.small { /* an example of styling an element (or multiple elements, remember classes can go on more than one element) by its class */
+    font-size: 80%;
+}
+
+.poster {
+    height: 150px; /* note that I used to change the width here but I've changed it to height to prevent a bug with more that 3 movies */
+    border: 4px solid #ffffff;
+    display: block;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.movie {
+    float: left;
+    width: 31%;
+    text-align: center;
+    padding: 0px 10px;
+
+    /* --- Different synopsis length --- */
+    /* This forces our absolute positioning within the label (below) to treat 0 as the top left of this containing element */
+    /* position: relative;
+    height: 380px;
+    overflow: hidden;*/
+}
+
+.movie label {
+    font-weight: bold;
+    color: #FFCC00;
+
+    /* Because we're animating changing the size of the img within this label it's safest to take it 'out of the flow' so it doesn't affect elements around it. not as a result the synopsis has to have a big chunk of margin above it
+    */
+    /*position: absolute;
+    left: 0;
+    width: 100%;*/
+}
+
+.movie .synopsis {
+    display: block;
+    font-size: 80%;
+    font-style: italic;
+    line-height: 1.6;
+    margin-top: 15px; /* May need to adjust margin see comment above */
+}
+
+.movie input {
+    display: none;
+}
+
+#user-info {
+    float: right;
+}
+
+#user-info a {
+    color: white;
+    font-size: 80%;
+    padding-right: 10px;
+}
+
+#user-info a:last-child {
+    padding-right: 0;
+}
+
+nav ul {
+    padding-left: 0;
+}
+
+nav li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px;
+}
+
+nav li:first-child {
+    padding-left: 0px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 7px 12px;
+    background-color: #181E24;
+    border-radius: 3px;
+}
+
+nav a:hover {
+    background-color: #c1e2d1;
+    color: #181E24;
+}
+
+footer {
+    position: fixed;
+    height: 30px;
+    bottom: 0px;
+    width: 100%;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+footer p {
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+}

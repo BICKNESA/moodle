@@ -16,8 +16,9 @@
 
             $beertime = 1484881200;
 
-            $currentday = date(‘N’, $beertime); //returns the current day a number 1 - 7
-            $currenthour = date(‘G’, $beertime); //returns the current hour as a number from 0-24
+            $this->content = new StdClass;
+            $currentday = date('N', $beertime); //returns the current day a number 1 - 7
+            $currenthour = date('G', $beertime); //returns the current hour as a number from 0-24
 
             if ($currentday == 5 && ($currenthour == 16 || $currenthour == 15)) {
                 $this->content->text = "Yay! Its Beer'o'clock!";
